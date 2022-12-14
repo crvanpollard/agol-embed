@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .accordion{
+    width: 100%;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    padding: 1rem;
+    padding-right: 3.5rem;
+    text-align: left;
+    cursor: pointer;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-width: 0px;
+    margin: 0px;
+    color:rgba(85,145,62,1);
+    background-color: rgba(210, 226, 192, 1);
+  }
+
+  .active, .accordion:hover {
+    background-color: rgba(210, 226, 192, 1);
+  }
+
+.accordion::after {
+    content: "\002B";
+    font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    float: right;
+    margin-left: 5px;
+    color:rgba(85,145,62,1);
+  }
+
+.active::after {
+    content:"\2212";
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    color:rgba(85,145,62,1);
+  }
+
+.panel {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  color:rgba(85,145,62,1);
+  background-color: #ECF5E1;
+}
+</style>
+</head>
+<body>
+<button class="accordion"> Other Actions</button>
+<div class="panel" style="display:block;">
+<ul>
+<li><B>Work with the CCMUA, Camden SMART, and key partners</B> to prioritize strategic GSI investments in the city.</li>
+<li><b>Work with residents and relevant public agencies</b> to enforce air pollution regulations and implement complaint processes.</li>
+<li><b>Include climate change projections and adaptation measures</b> in city plans, policies, and ordinances.</li>
+<li><b>Review the implementation</b> of the city's Sustainability Ordinance and develop additional tools or process improvements as needed to increase its effectiveness.</li>
+<li><b>Create a campaign</b> to educate residents about their drinking water supply.</li>
+<li><b>Increase the share of climate-friendly vehicles and use climate-friendly fuels</b> in city-owned vehicles.</li>
+<li><b>Develop citywide guidelines</b> to support appropriate brownfield reuse that prioritizes community health and well-being when contaminated sites are remediated.</li>
+<li><b>Work with Camden Community Partnership, Camden County, and the CCMUA</b> to enact a countywide stormwater fee.</li>
+<li><b>Work with the South Jersey Port Corporation</b> to explore a green ports initiative.</li>
+<li><b>Implement a rain check program</b> for homeowners to obtain free rain barrels.</li>
+<li><b>Work with the Camden Redevelopment Authority</b> to continue to implement the Mt. Ephraim Choice Neighborhood Brownfield Area-Wide Plan with a focus on remediating the Phil-Mar site.</li>
+<li><b>Investigate revising the floodplain management ordinance</b> to include increased freeboard requirements for new or substantially improved structures located within a flood hazard area.</li>
+</ul>
+</div>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</body>
+</html>
